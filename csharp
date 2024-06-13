@@ -1,0 +1,25 @@
+public class Solution {
+    public int RemoveDuplicates(int[] nums) {
+        
+        //check if array is empty & if array length is == 0
+        //if so return 0
+        if (nums == null || nums.Length == 0)
+            return 0;
+        
+        int i = 0;
+        //initialize where unique nums will be place
+        
+        for (int j = 0; j < nums.Length; j++)
+        { //loop thru 'nums' array ; j is used as the iterator
+            nums[i++] = nums[j];
+            //once unique element is found , we increment our initilizer 
+            
+            while (j < nums.Length -1 && nums[j] == nums [j+1])
+                j++;
+        }
+        
+        return i;
+        
+        
+    }
+}
